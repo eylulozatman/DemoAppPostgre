@@ -17,11 +17,11 @@ public class StudentController {
 
 
     @Autowired
-    StudentRepo stdrepo;
+    StudentRepo studentRepo;
 
     @GetMapping("/student-name")
     public String getStudentName(@RequestParam(value = "id") int id) {
-        Student student = stdrepo.findById(id);
+        Student student = studentRepo.findById(id);
 
         return student.getName();
 
@@ -29,7 +29,7 @@ public class StudentController {
 
     @GetMapping("/all-student")
     public List<Student> getAllStudent() {
-        return stdrepo.findAll();
+        return studentRepo.findAll();
     }
 
 }
