@@ -3,6 +3,7 @@ package com.example.demoapp.repo;
 
 import com.example.demoapp.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 public interface StudentRepo extends JpaRepository<Student, Integer> {
     @Override
     List<Student> findAll();
+
 
     Student findById(int id);
 
